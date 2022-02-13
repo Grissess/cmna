@@ -80,8 +80,8 @@ enum cmna_error cmna_circuit_add_source(
 		struct cmna_circuit *circuit,
 		size_t source, size_t node, double value
 );
-#define cmna_circuit_add_source_pos(c, s, n) cmna_circuit_add_source((c), (s), (n), -1.0)
-#define cmna_circuit_add_source_neg(c, s, n) cmna_circuit_add_source((c), (s), (n), 1.0)
+#define cmna_circuit_add_source_pos(c, s, n) cmna_circuit_add_source((c), (s), (n), 1.0)
+#define cmna_circuit_add_source_neg(c, s, n) cmna_circuit_add_source((c), (s), (n), -1.0)
 
 enum cmna_error cmna_circuit_add_source_potential(
 		struct cmna_circuit *circuit,
