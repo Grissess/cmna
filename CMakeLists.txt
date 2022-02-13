@@ -5,7 +5,14 @@ project(cmna
 	DESCRIPTION "A lightweight library for Modified Nodal Analysis"
 	LANGUAGES C)
 
+include(GNUInstallDirs)
+
 find_package(LAPACK REQUIRED)
 
 add_subdirectory(src)
 add_subdirectory(app)
+
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(
+	${CMAKE_CURRENT_BINARY_DIR}/cmna-config-version.cmake
+	COMPATIBILITY SameMajorVersion)
