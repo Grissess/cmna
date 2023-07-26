@@ -93,9 +93,9 @@ enum cmna_error cmna_circuit_add_current(
 		size_t node, double current
 );
 
-enum cmna_error cmna_circuit_node_voltages(
+enum cmna_error cmna_circuit_node_potentials(
 		struct cmna_circuit *circuit,
-		void **voltages
+		void **potentials
 );
 
 enum cmna_error cmna_circuit_source_currents(

@@ -27,7 +27,7 @@ int main() {
 	char type, node_a[32], node_b[32];
 	size_t max_node = 0;
 	size_t vss = 0, vs = 0;
-	double value, *voltages, *currents;
+	double value, *potentials, *currents;
 	size_t node;
 	unsigned lineno = 0;
 
@@ -121,10 +121,10 @@ int main() {
 
 	check(cmna_circuit_solve(&circuit));
 
-	check(cmna_circuit_node_voltages(&circuit, (void **)&voltages));
+	check(cmna_circuit_node_potentials(&circuit, (void **)&potentials));
 	check(cmna_circuit_source_currents(&circuit, (void **)&currents));
 	for(node = 0; node < circuit.nodes; node++) {
-		printf("%lf ", voltages[node]);
+		printf("%lf ", potentials[node]);
 	}
 	putchar('\n');
 	for(vs = 0; vs < circuit.sources; vs++) {

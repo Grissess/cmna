@@ -348,13 +348,13 @@ enum cmna_error cmna_circuit_add_current(
 	return CMNA_E_SUCCESS;
 }
 
-enum cmna_error cmna_circuit_node_voltages(
+enum cmna_error cmna_circuit_node_potentials(
 		struct cmna_circuit *circuit,
-		void **voltages
+		void **potentials
 ) {
 	if(circuit->solve.state != CMNA_SS_SOLVED) return CMNA_E_NOT_READY;
-	if(!voltages) return CMNA_E_INVALID;
-	*voltages = circuit->solve.unknowns;
+	if(!potentials) return CMNA_E_INVALID;
+	*potentials = circuit->solve.unknowns;
 	return CMNA_E_SUCCESS;
 }
 
