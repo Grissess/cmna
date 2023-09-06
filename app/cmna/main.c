@@ -33,7 +33,8 @@ int main() {
 
 	while(scanf(" %c %31s%31s", &type, node_a, node_b) != EOF) {
 		lineno++;
-		assert(top = malloc(sizeof(*top)));
+		top = malloc(sizeof(*top));
+		assert(top);
 		top->type = type;
 		top->line = lineno;
 		if(
